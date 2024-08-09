@@ -1,11 +1,13 @@
 import { Request, Response } from "express";
 import { PaymentService } from "../service/paymentService";
+import dotenv from "dotenv";
 
-const stripe = require('stripe')('sk_test_51PIidhDdEVvEGUkxnioFgWXwphLAPJKjUcREvNIXxjKkgHO9Ws2ei1o6Qdirx9rgytMuFAb0ki3gQr39COHji8m300dWDkK8rs');
+dotenv.config();
 
+const stripe = require('stripe')(process.env.STRIPE_SECRECT);
 
 const YOUR_DOMAIN = 'http://localhost:8080';
-const endpointSecret = "whsec_b6d7a426a69b1aec08fe16ff53836d0811ca6156f9397db85b1d6a426880eec1";
+const endpointSecret = process.env.STRIPE_ENDPOINT_SECRET;
 
 export class PaymentController {
 
@@ -56,7 +58,7 @@ export class PaymentController {
                 const stripeId = paymentIntentSucceeded.id
                 const userId = paymentIntentSucceeded.metadata.userId
                 const result = await this.service.checkUserPayment(userId as string)
-                
+
                 if (!result[0]) {
                     await this.service.updatePayment(userId, stripeId)
                 }
