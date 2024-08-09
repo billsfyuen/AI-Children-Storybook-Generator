@@ -1,0 +1,182 @@
+body{
+    min-width: 1400px;
+    position: relative;
+    top:85px;
+    
+}
+
+/* ---------------           navbar              --------------------------*/
+.navbar {
+    display: flex;
+    margin: 0;
+    margin-bottom: 5px;
+    width: 100%;
+    padding: 20px;
+    align-items: center;
+    border: 40px solid;
+    border-image-source: url(../main/img/about.jpg);
+    border-image-slice: 80 fill;
+    border-image-repeat: round;
+
+}
+
+
+/* ---------------           main             ------------------------- */
+
+.ourStory{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 1800px;
+    margin: 50px;
+    background-image: linear-gradient(to top, rgba(255, 246, 232, 1), rgba(255, 246, 232, 0.8), rgba(255, 246, 232, 0.6), rgba(255, 246, 232, 0.4), rgba(255, 246, 232, 0.2), rgba(255, 246, 232, 0));
+}
+
+.border{
+    border: 1px solid black;
+    border-radius: 10px;
+}
+
+
+.topContainer{
+    width: 100%;
+    height: 34%;
+    display: flex;
+    justify-content: center;
+    position: relative;
+}
+.topContainer-L{
+    width: 60%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    overflow: hidden;
+    text-align: left;
+}
+
+.topContainer-R{
+    width: 40%;
+    height: 100%;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+}
+
+.text-container {
+    width: 60%;
+    height: 100%;
+    transform: translateY(100%); 
+    opacity: 0; 
+    animation: fade-in 2.5s ease-in-out forwards;
+}
+@keyframes fade-in {
+    0% {
+        transform: translateY(100%);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.animation{
+    animation: fade-in 2.5s ease-in-out forwards
+}
+
+
+
+
+.middleContainer{
+    width: 100%;
+    height: 34%;
+    display: flex;
+    justify-content: end;
+    position: relative;
+}
+.middleContainer-L{
+    width: 40%;
+    height: 100%;
+
+    position: absolute;
+    display: flex;
+    justify-content: start;
+    align-items: flex-end;
+    bottom: 0;
+    left: 0;
+    
+}
+.middleContainer-R{
+    width: 60%;
+    height: 100%;
+    display: flex;
+    text-align: left;
+    padding-right: 50px;
+    align-self: center;
+    flex-direction: column;
+    justify-content: center;
+
+    animation: fade-in 2.5s ease-in-out forwards;
+}
+
+
+.bolowContainer{
+    width: 100%;
+    height: 70%;
+    display: flex;
+    justify-content: center;
+    
+}
+
+/* ---------------           footer              ------------------------- */
+
+.belowContainer{
+    display: block;
+    display: flex;
+    bottom: 2%;
+    justify-content: space-between;
+}
+
+.belowContainer-top{
+    width: 100%;
+    height: 20%;
+    text-align: center;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.belowContainer-below{
+    width: 100%;
+    height: 80%;
+    text-align: center;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.p0{
+    font-size: 40px;
+    font-family: "Papyrus", "fantasy";
+    font-style: italic;
+}
+
+.p1{
+    font-size: 30px;
+    font-family: "Papyrus", "fantasy";
+    font-style: italic;
+}
+
+.p2{
+    font-size: 20px;
+    font-family: "Papyrus", "fantasy";
+    font-style: italic;
+}

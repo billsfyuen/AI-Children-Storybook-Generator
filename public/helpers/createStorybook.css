@@ -1,0 +1,13 @@
+#character-image {
+    width: 60%;
+    padding-bottom: 10px;
+}
+
+.new-story-character-image {
+    display: flex;
+    justify-content: center
+}
+
+.hidden {
+    display: none;
+}

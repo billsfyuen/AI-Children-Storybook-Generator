@@ -1,0 +1,58 @@
+{
+  "name": "group_project_story_book",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "start": "ts-node main.ts",
+    "dev": "ts-node-dev main.ts",
+    "test": "jest",
+    "openai": "ts-node openaiTest.ts",
+    "replicate": "ts-node replicateTest.ts"
+  },
+  "keywords": [],
+  "author": "Ah Ho <shumkwanho@gmail.com>",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/bcrypt": "^5.0.2",
+    "@types/bcryptjs": "^2.4.6",
+    "@types/express": "^4.17.21",
+    "@types/express-session": "^1.18.0",
+    "@types/formidable": "^3.4.5",
+    "@types/jest": "^29.5.12",
+    "@types/node": "^20.12.12",
+    "@types/pg": "^8.11.6",
+    "bcryptjs": "^2.4.3",
+    "express": "^4.19.2",
+    "express-session": "^1.18.0",
+    "formidable": "^3.5.1",
+    "jest": "^29.7.0",
+    "knex": "^3.1.0",
+    "pg": "^8.11.5",
+    "ts-jest": "^29.1.2",
+    "ts-node": "^10.9.2",
+    "ts-node-dev": "^2.0.0",
+    "typescript": "^5.4.5"
+  },
+  "dependencies": {
+    "bcrypt": "^5.1.1",
+    "dotenv": "^16.4.5",
+    "ejs": "^3.1.10",
+    "express-back": "^0.0.2",
+    "fs": "^0.0.1-security",
+    "google-translate-api-browser": "^5.0.0",
+    "node-fetch": "^3.3.2",
+    "openai": "^4.47.1",
+    "path": "^0.12.7",
+    "replicate": "^0.29.4",
+    "stripe": "^15.7.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/shumkwanho/Group-Project-Story-Book-.git"
+  },
+  "bugs": {
+    "url": "https://github.com/shumkwanho/Group-Project-Story-Book-/issues"
+  },
+  "homepage": "https://github.com/shumkwanho/Group-Project-Story-Book-#readme",
+  "description": ""
+}

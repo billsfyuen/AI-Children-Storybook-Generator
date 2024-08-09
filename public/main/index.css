@@ -1,0 +1,409 @@
+@import url('../helpers/createStorybook.css');
+@import url('../helpers/bookReader.css');
+@import url('../helpers/login-register.css');
+
+body{
+    min-width: 1400px;
+    position: relative;
+    top:159px;
+}
+
+.border {
+    border: 1px solid black;
+    border-radius: 10px;
+
+}
+
+.border-large {
+    border: 1px solid black;
+    border-radius: 10px;
+    padding: 6px
+}
+
+.border-large:hover {
+    background-color: rgb(239, 173, 92);
+}
+
+.main-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    margin: 0;
+}
+
+.navbar {
+    display: flex;
+
+    margin: 0;
+    margin-bottom: 5px;
+    width: 100%;
+    padding: 20px;
+    align-items: center;
+    border: 40px solid;
+    border-image-source: url(./img/borderimage.avif);
+    border-image-slice: 80 fill;
+    border-image-repeat: round;
+
+}
+
+.search-bar {
+    width: 800px;
+    height: 35px;
+    font-size: 20px;
+    border: 1px solid black;
+    border-radius: 10px;
+    background-color: rgb(239, 173, 92);
+    padding-left: 20px;
+}
+
+
+.main-part {
+    width: 85%;
+    height: 1200px;
+    padding: 30px;
+}
+
+.search-area {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 80px;
+    align-items: center;
+    padding: 25px;
+}
+
+.selection-area {
+    display: flex;
+    width: 100%;
+    height: 800px;
+}
+
+.character-area {
+    width: 30%;
+    margin-right: 30px;
+    max-width: 350px;
+}
+
+.character {
+    display: flex;
+    padding-left: 5px;
+    margin: 10px;
+    height: 30px;
+    line-height: 30px;
+}
+
+.create-character {
+    display: flex;
+    justify-content: space-between;
+}
+
+.character-image {
+    margin-right: 30px;
+}
+
+.storybook-area {
+    padding: 30px;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    overflow-y: scroll;
+}
+
+.book {
+    padding: 10px;
+    width: 200px;
+    height: 300px;
+    background: linear-gradient(155deg, rgb(255, 255, 255) 60%, rgb(255, 218, 106));
+    box-sizing: content-box;
+    text-align: center;
+    position: relative;
+    margin: 10px;
+    cursor: pointer;
+}
+
+.book-img {
+    height: 120px;
+    line-height: 120px;
+}
+
+.book-title {
+    padding-top: 15px;
+}
+
+.like-btn {
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+    border: none;
+    cursor: pointer;
+    z-index: 10;
+    font-size: xx-large;
+}
+
+.book:hover {
+    opacity: 0.7;
+}
+
+
+
+.toBookPage1 {
+    display: block;
+    justify-content: center;
+    text-align: center;
+    border-radius: 90%;
+    background-color: brown;
+    position: absolute;
+    left: 50%;
+}
+
+.filter-area {
+    display: flex;
+    width: 65%;
+    max-width: 800px;
+    justify-content: space-between;
+    align-items: center;
+    margin-right: 20px;
+}
+
+.hide {
+    display: none !important;
+}
+
+.filter-list {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 5px;
+    font-size: 12px;
+    width: 200px;
+    position: absolute;
+    top: 30px;
+    left: -10px;
+    max-height: 150px;
+    overflow-y: scroll;
+    background-color: white;
+    font-size: 17px;
+    z-index: 99;
+}
+
+.filter-list::-webkit-scrollbar {
+    display: none;
+}
+
+.option {
+    display: flex;
+    justify-content: space-between;
+}
+
+.filter {
+    position: relative;
+}
+
+.sort-form {
+    display: flex;
+    flex-direction: column;
+}
+
+.search-container {
+    position: relative;
+}
+
+.search-result {
+    height: 50px;
+    display: flex;
+    background-color: bisque;
+    align-items: center;
+    justify-content: space-between;
+    width: 800px;
+    padding: 0 30px;
+    font-size: 15px;
+}
+
+.search-result:hover {
+    background-color: rgb(255, 235, 210);
+}
+
+.search-image {
+    width: 50px
+}
+
+.search-result-container {
+    position: absolute;
+    top: 60px;
+    background-color: bisque;
+    z-index: 100;
+    border-radius: 10px;
+}
+
+.introductionBox {
+    background: linear-gradient(rgba(227, 150, 8, 0.7) 60%, rgb(255, 255, 255));
+    margin: 10px;
+    padding: 20px 0;
+    display: block;
+    text-align: center;
+    height: 130px
+}
+
+.p0{
+    font-size: 50px;
+    font-family: "Papyrus", "fantasy";
+    font-style: italic;
+}
+
+.p1 {
+    font-size: 30px;
+    font-family: "Papyrus", "fantasy";
+    font-style: italic;
+}
+
+.p2 {
+    font-size: 20px;
+    font-family: "Papyrus", "fantasy";
+    font-style: italic;
+}
+
+.textAbsolute {
+    position: absolute;
+    bottom: 22%;
+    left: 6.5%;
+    font-size: 28px;
+    font-family: "Papyrus", "fantasy";
+    font-style: italic;
+    background-color: white;
+    margin: 0;
+    height: 42px;
+    line-height: 42px;
+    padding: 5px 10px;
+}
+
+.image1 {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    height: 50px;
+    width: 50px;
+
+}
+
+.display-storybook {
+    display: flex;
+    flex-wrap: wrap;
+    overflow-y: scroll;
+}
+
+.create-storybook {
+    position: relative;
+    width: 300px;
+    height: 800px;
+    min-width: 300px;
+    cursor: pointer;
+}
+
+.create-storybook:hover {
+    opacity: 0.7;
+}
+
+.text-wrapper {
+    background-color: rgb(227, 150, 150);
+    border-radius: 2000px 2000px 0 0;
+    height: 55px;
+    position: absolute;
+    text-align: center;
+}
+
+.toggle-filter {
+    width: 100px;
+    cursor: pointer;
+}
+
+.search-result img{
+    height: 45px;
+    width: 45px;
+    background-position: center center;
+    background-repeat: no-repeat;
+    object-fit: cover;
+}
+
+.belowContainer{
+    
+    display: block;
+    display: flex;
+    bottom: 2%;
+    
+    justify-content: space-between;
+    
+}
+
+.belowContainer-top{
+    width: 100%;
+    height: 20%;
+    text-align: center;
+    align-items: center;
+    display: flex;
+    justify-content: center
+}
+
+.belowContainer-below{
+    width: 100%;
+    height: 80%;
+    text-align: center;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+
+.otherBook{
+    width: 350px;
+    height: 300px;
+    
+}
+
+.otherBookContainer{
+   
+    width: 250px;
+    height: 250px;
+    background-color: bisque;
+}
+
+.publishedBy{
+    width: 350px;
+    height: 300px;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.supportedBy{
+    width: 350px;
+    height: 300px;
+    
+}
+
+.p1{
+    font-size: 30px;
+    
+    font-family: "Papyrus", "fantasy";
+    font-style: italic;
+}
+
+.p2{
+    font-size: 20px;
+    
+    font-family: "Papyrus", "fantasy";
+    font-style: italic;
+}
+
+.footer-container{
+    padding-top: 30px;
+    height: 400px;
+    width: 100%;
+}
+
+.like-count{
+    position: absolute;
+    left: 50px;
+    bottom: 0px;
+}

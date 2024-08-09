@@ -1,0 +1,615 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script
+      src="https://kit.fontawesome.com/19ebb34589.js"
+      crossorigin="anonymous"
+    ></script>
+
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="index.css" />
+    <script async src="https://js.stripe.com/v3/buy-button.js"></script>
+    <title>Group Project - Story Book Creator</title>
+  </head>
+
+  <body>
+    <div class="navbar fixed-top" id="navbar">
+      <div class="search-container">
+        <input type="text" placeholder="Search Bar" class="search-bar" />
+        <div class="search-result-container"></div>
+      </div>
+      <button
+        id="user-page-redirect"
+        type="button"
+        class="btn btn-primary hide p2"
+      >
+        <img
+          src="./img/stars.gif"
+          style="width: 50px; height: 30px"
+          alt="grc"
+        />
+        Hello <span id="username-display"></span>
+      </button>
+      <button
+        id="login"
+        onclick="login()"
+        type="button"
+        class="btn btn-primary hide p2"
+      >
+        <img
+          src="./img/stars.gif"
+          style="width: 50px; height: 30px"
+          alt="grc"
+        />
+        Login
+      </button>
+      <button
+        id="register"
+        onclick="register()"
+        type="button"
+        class="btn btn-primary hide p2"
+      >
+        <img
+          src="./img/stars.gif"
+          style="width: 50px; height: 30px"
+          alt="grc"
+        />
+        Register
+      </button>
+      <button
+        id="logout"
+        onclick="logout()"
+        type="button"
+        class="btn btn-primary hide p2"
+      >
+        <img
+          src="./img/stars.gif"
+          style="width: 50px; height: 30px"
+          alt="grc"
+        />
+        Logout
+      </button>
+    </div>
+
+    <div>
+      <div id="myCarousel" class="carousel slide mb-6" data-bs-ride="carousel">
+        <div class="carousel-indicators">
+          <button
+            type="button"
+            data-bs-target="#myCarousel"
+            data-bs-slide-to="0"
+            class="active"
+            aria-label="Slide 1"
+            aria-current="true"
+          ></button>
+          <button
+            type="button"
+            data-bs-target="#myCarousel"
+            data-bs-slide-to="1"
+            aria-label="Slide 2"
+            class=""
+          ></button>
+          <button
+            type="button"
+            data-bs-target="#myCarousel"
+            data-bs-slide-to="2"
+            aria-label="Slide 3"
+            class=""
+          ></button>
+        </div>
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img
+              src="./img/coursel_1.png"
+              class="img-fluid w-100"
+              style="height: 35vh"
+            />
+            <div class="container">
+              <div class="carousel-caption text-start">
+                <h1>Storybook</h1>
+                <p class="opacity-75">Create your own storybook.</p>
+              </div>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <img
+              src="./img/coursel_2.png"
+              class="img-fluid w-100"
+              style="height: 35vh"
+            />
+            <div class="container">
+              <div class="carousel-caption">
+                <h1>Character</h1>
+                <p>Customize Storybook Characters</p>
+              </div>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <img
+              src="./img/coursel_3.png"
+              class="img-fluid w-100"
+              style="height: 35vh"
+            />
+            <div class="container">
+              <div class="carousel-caption text-end">
+                <h1>Easy to Read</h1>
+                <p>Made for your kids</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <button
+          class="carousel-control-prev"
+          type="button"
+          data-bs-target="#myCarousel"
+          data-bs-slide="prev"
+        >
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button
+          class="carousel-control-next"
+          type="button"
+          data-bs-target="#myCarousel"
+          data-bs-slide="next"
+        >
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>
+    </div>
+
+    <div class="introductionBox">
+      <p class="p1">
+        <img src="./img/bird2.png" style="width: 3vh; height: 3vh" />
+        Our storybooks are based on reading proficiency rather than age.
+        <img src="./img/bird.png" style="width: 3vh; height: 3vh" />
+      </p>
+      <p class="p1">
+        <img src="./img/owl.png" style="width: 2vh; height: 4vh" />
+        Let us create storybooks tailored specifically for your children.
+        <img src="./img/owl.png" style="width: 2vh; height: 4vh" />
+      </p>
+    </div>
+
+    <div class="main-container">
+      <div class="main-part border">
+        <section class="search-area border">
+          <div class="filter-area">
+            <form class="filter">
+              <label class="toggle-filter p2 text-wrapper" id="category">
+                Category
+                <i class="fa-sharp fa-solid fa-caret-down"></i>
+              </label>
+              <div class="filter-list filter-category hide border"></div>
+            </form>
+            <form class="filter">
+              <label class="toggle-filter p2 text-wrapper" id="target_age">
+                Target Age <i class="fa-sharp fa-solid fa-caret-down"></i>
+              </label>
+              <div class="filter-list filter-target_age hide border"></div>
+            </form>
+            <form class="filter">
+              <label class="toggle-filter p2 text-wrapper" id="total_page">
+                Total Page <i class="fa-sharp fa-solid fa-caret-down"></i>
+              </label>
+              <div class="filter-list filter-total_page hide border"></div>
+            </form>
+          </div>
+          <div class="sort-area">
+            <form class="sort-form p2">
+              <label>SORT BY</label>
+              <select name="sort-drop-down" id="sort">
+                <option value=""></option>
+                <option value="created_at">Latest Book</option>
+                <option value="likes">Most Liked</option>
+                <option value="target_age">Difficulties</option>
+              </select>
+            </form>
+          </div>
+        </section>
+
+        <div class="selection-area">
+          <div
+            class="create-storybook border"
+            style="width: 300px; height: 800px"
+            onclick="login()"
+          >
+            <img
+              src="./img/readbook.png"
+              class="border img-fluid w-100 h-100"
+            />
+            <p class="textAbsolute">Create Story Book</p>
+          </div>
+          <section class="storybook-area border">
+            <!-- contents to be printed in js -->
+          </section>
+        </div>
+      </div>
+    </div>
+
+    <!-- login form -->
+    <div class="login-form" id="loginForm">
+      <form class="login-form-container">
+        <h1>Login</h1>
+
+        <label for="username"><b>Username</b></label>
+        <input
+          id="username"
+          type="text"
+          placeholder="Enter Username"
+          name="username"
+          value="admin"
+          required
+        />
+
+        <label for="email"><b>Email</b></label>
+        <input
+          id="email"
+          type="text"
+          placeholder="Enter Email"
+          name="email"
+          value="admin@storybook.com"
+          required
+        />
+
+        <label for="password"><b>Password</b></label>
+        <input
+          id="password"
+          type="password"
+          placeholder="Enter Password"
+          name="password"
+          value="123"
+          required
+        />
+
+        <button type="submit" class="btn">Login</button>
+        <button type="button" class="btn cancel" onclick="loginCloseForm()">
+          Close
+        </button>
+      </form>
+    </div>
+
+    <!-- register form -->
+    <div class="register-form" id="registerForm">
+      <form class="register-form-container">
+        <h1>Register</h1>
+
+        <label for="newUsername"><b>Username</b></label>
+        <input
+          id="newUsername"
+          type="text"
+          placeholder="Enter Username"
+          name="newUsername"
+          required
+        />
+
+        <label for="newEmail"><b>Email</b></label>
+        <input
+          id="newEmail"
+          type="text"
+          placeholder="Enter Email"
+          name="newEmail"
+          required
+        />
+
+        <label for="newPassword"><b>Password</b></label>
+        <input
+          id="newPassword"
+          type="password"
+          placeholder="Enter Password"
+          name="newPassword"
+          required
+        />
+
+        <label for="confirmpassword"><b>Confirm Password</b></label>
+        <input
+          id="confirmPassword"
+          type="password"
+          placeholder="Confirm Password"
+          name="confirmPassword"
+          required
+        />
+
+        <button type="submit" class="btn">Register</button>
+        <button type="button" class="btn cancel" onclick="registerCloseForm()">
+          Close
+        </button>
+      </form>
+    </div>
+
+    <!-- create new story modal -->
+    <div
+      class="modal fade modal-lg"
+      id="createNewStoryModal"
+      data-bs-backdrop="static"
+      data-bs-keyboard="false"
+      aria-hidden="true"
+      aria-labelledby="createNewStoryModalLabel"
+      tabindex="-1"
+    >
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content" id="create-storybook">
+          <div class="modal-header">
+            <h1
+              class="modal-title fs-5 create-storybook-header"
+              id="createNewStoryModalLabel"
+            >
+              Create New Story Book
+            </h1>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <form id="new-storybook-form">
+            <div class="modal-body" id="create-storybook-body">
+              <div class="new-story-character-image">
+                <!-- contents to be printed in js -->
+              </div>
+
+              <div class="input-group mb-3">
+                <label class="input-group-text" for="new-storybook-character"
+                  >Main Character</label
+                >
+                <select class="form-select" id="new-storybook-character">
+                  <!-- contents to be printed in js -->
+                </select>
+              </div>
+
+              <div class="input-group mb-3">
+                <label class="input-group-text" for="new-storybook-category"
+                  >Category</label
+                >
+                <select class="form-select" id="new-storybook-category">
+                  <option selected value="Adventure">Adventure</option>
+                  <option value="Friendship">Friendship</option>
+                  <option value="Imagination">Imagination</option>
+                  <option value="Nature">Nature</option>
+                  <option value="Emotions">Emotions</option>
+                  <option value="Diversity">Diversity</option>
+                  <option value="Problem-solving">Problem-solving</option>
+                  <option value="Kindness">Kindness</option>
+                </select>
+              </div>
+
+              <div class="input-group mb-3">
+                <label class="input-group-text" for="new-storybook-target-age"
+                  >Target Age</label
+                >
+                <select class="form-select" id="new-storybook-target-age">
+                  <option value="3">3 or below</option>
+                  <option selected value="6">4 - 6</option>
+                  <option value="8">6 - 8</option>
+                  <option value="10">8 - 10</option>
+                  <option value="12">10 or above</option>
+                </select>
+              </div>
+
+              <div class="input-group mb-3">
+                <label class="input-group-text" for="new-storybook-total-page"
+                  >Total Pages</label
+                >
+                <select class="form-select" id="new-storybook-total-page">
+                  <option value="4">4 for Demo</option>
+                  <option value="6">6</option>
+                  <option value="7">7</option>
+                  <option selected value="8">8</option>
+                  <option value="9">9</option>
+                  <option value="10">10</option>
+                </select>
+              </div>
+            </div>
+            <div class="modal-footer" id="create-storybook-footer">
+              <span class="create-story-book-done-status"></span>
+              <span class="create-story-book-status"></span>
+              <i
+                class="fa-solid fa-spinner fa-spin-pulse hidden"
+                id="create-story-book-in-progress-icon"
+                style="color: #74c0fc"
+              ></i>
+              <i
+                class="fa-solid fa-check hidden"
+                id="create-story-book-done-icon"
+                style="color: #74c0fc"
+              ></i>
+              <button
+                class="btn btn-primary"
+                type="submit"
+                for="new-storybook-form"
+                id="new-storybook-submit-btn"
+              >
+                Create Story Book
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <!-- storybook reader -->
+    <div
+      class="modal fade modal"
+      id="readerModal"
+      data-bs-backdrop="static"
+      data-bs-keyboard="false"
+      aria-hidden="true"
+      aria-labelledby="readerModalLabel"
+      tabindex="-1"
+    >
+      <div class="modal-dialog modal-lg modal-dialog-centered">
+        <div class="modal-content" id="storybook-content">
+          <div class="modal-header">
+            <h1
+              class="modal-title fs-5 storybook-content-header"
+              id="readerModalLabel"
+            >
+              <!-- content to be displayed by js -->
+            </h1>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body" id="storybook-content-body">
+            <!-- content to be displayed by js -->
+          </div>
+          <div class="modal-footer" id="storybook-content-footer">
+            <button class="btn btn-primary prev-page-btn">Previous</button>
+            <div class="story-page-number-container">
+              <!-- content to be displayed by js -->
+            </div>
+            <button class="btn btn-primary next-page-btn">Next</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Payment Modal -->
+    <div
+      class="modal fade"
+      id="paymentModal"
+      tabindex="-1"
+      aria-labelledby="exampleModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h1 class="modal-title fs-5" id="exampleModalLabel">Payment</h1>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <main>
+              <div class="row row-cols-1 mb-3 text-center">
+                <div class="col">
+                  <div class="card mb-4 rounded-3 shadow-sm">
+                    <div class="card-header py-3">
+                      <h4 class="my-0 fw-normal">Premium</h4>
+                    </div>
+                    <div class="card-body">
+                      <h1 class="card-title pricing-card-title">
+                        $50<small class="text-body-secondary fw-light"></small>
+                      </h1>
+                      <ul class="list-unstyled mt-3 mb-4">
+                        <li>Free Access to StoryBooks</li>
+                        <li>Create StoryBook(Unlimited)</li>
+                        <li>Create Character(Unlimited)</li>
+                      </ul>
+                      <form action="/create-checkout-session" method="POST">
+                        <button
+                          type="submit"
+                          class="w-100 btn btn-lg btn-outline-primary"
+                          id="checkout-button"
+                        >
+                          Checkout
+                        </button>
+                      </form>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </main>
+          </div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-bs-dismiss="modal"
+            >
+              Close
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <footer class="footer bg-dark text-white mt-5">
+      <div class="container">
+        <footer class="py-5">
+          <div class="row d-flex justify-content-between">
+            <div class="publishedBy col-4 col-md-4 mb-3">
+              <div class="belowContainer-top p1">About</div>
+              <div class="belowContainer-below">
+                <a
+                  href="../ourStory/index.html"
+                  class="nav-link p-0 text-white p1"
+                  >Our Story</a
+                >
+                <a
+                  href="../aboutus/index.html"
+                  class="nav-link p-0 text-white p1"
+                  >About us</a
+                >
+              </div>
+            </div>
+
+            <div class="publishedBy col-4 col-md-4 mb-3">
+              <div class="belowContainer-top p1">Published By</div>
+              <div class="belowContainer-below">
+                <img src="./img/DALL.E 3.png" style="width: 200px" />
+              </div>
+            </div>
+            <div class="supportedBy col-4 col-md-4 mb-3">
+              <div class="belowContainer-top p1">Supported By</div>
+              <div class="belowContainer-below p1">
+                Adams Ip
+                <img src="./img/adams.webp" style="width: 175px" />
+              </div>
+            </div>
+          </div>
+
+          <div
+            class="d-flex flex-column flex-sm-row justify-content-between py-4 my-4 border-top"
+          >
+            <p>© 2024 Company, Inc. All rights reserved.</p>
+            <ul class="list-unstyled d-flex">
+              <li class="ms-3">
+                <a class="link-body-emphasis" href="#"
+                  ><svg class="bi" width="24" height="24">
+                    <use xlink:href="#twitter"></use></svg
+                ></a>
+              </li>
+              <li class="ms-3">
+                <a class="link-body-emphasis" href="#"
+                  ><svg class="bi" width="24" height="24">
+                    <use xlink:href="#instagram"></use></svg
+                ></a>
+              </li>
+              <li class="ms-3">
+                <a class="link-body-emphasis" href="#"
+                  ><svg class="bi" width="24" height="24">
+                    <use xlink:href="#facebook"></use></svg
+                ></a>
+              </li>
+            </ul>
+          </div>
+        </footer>
+      </div>
+    </footer>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script type="module" src="index.js"></script>
+  </body>
+</html>

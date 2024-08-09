@@ -1,0 +1,466 @@
+@import url('../helpers/characterCard.css');
+@import url('../helpers/createStorybook.css');
+@import url('../helpers/bookReader.css');
+
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 40px;
+    background-position: 100% 100%, 0 100%;
+    background-size: 25% 40%, 20% 25%;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-image: url(../main/img/chiikawa-usagi.gif),
+    url(../main/img/cover-1.thumb256.png);
+}
+
+#homePageButton {
+    display: flex;
+
+}
+
+#navbarBorder {
+    background-image: url(../main/img/Usagidaner.gif);
+    background-size: 50% 100%;
+    padding: 60px;
+    width: 100%;
+    border-radius: 70px;
+    background-repeat: no-repeat;
+}
+
+#containerBorder {
+    display: flex;
+    flex-direction: column;
+    background-size: 100% 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 900px;
+    width: 1000px;
+    border: 0px solid;
+    border-radius: 10px;
+    border: none;
+}
+
+#createStorybookCard {
+    background-image: url(../main/img/usagi.jpg);
+    background-size: 100% 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    /* height: 1000px; */
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    margin: 0;
+    margin-bottom: 10px;
+    width: 98%;
+    padding: 200px;
+    align-items: center;
+}
+
+a {
+    padding-left: 20px;
+}
+
+.personal-info {
+    display: flex;
+    align-items: center;
+    position: relative;
+    margin: 10px;
+    background-color: #dabf49;
+    border-radius: 225px;
+
+}
+
+.border {
+    border: solid 2px black;
+}
+
+.image {
+    width: 150px;
+    height: 150px;
+    border-radius: 225px;
+}
+
+.user-name {
+    position: relative;
+    bottom: 30px;
+    left: 20px;
+    font-size: 50px;
+}
+
+.email {
+    position: relative;
+    bottom: -25px;
+    left: -105px;
+}
+
+.edit {
+    position: absolute;
+    bottom: 20px;
+    left: 150px;
+    padding: 5px;
+    width: 35px;
+    height: 35px;
+}
+
+.collection {
+    /* background-color: #C00; */
+    display: flex;
+    align-items: center;
+    position: relative;
+    justify-content: space-evenly;
+    border-radius: 225px;
+    padding: 10px;
+}
+
+.display-area {
+    padding: 10px;
+}
+
+#bookCardBorder,
+#createStorybookCard {
+    width: 20%;
+}
+
+.characters,
+.storybooks,
+.likes {
+    display: flex;
+    padding: 1%;
+    justify-content: center;
+    font-size: 20px;
+}
+
+.characters:hover,
+.storybooks:hover,
+.likes:hover {
+    background-color: #008CBA;
+    color: white;
+    border-radius: 200px;
+}
+
+#collectionBorder>div {
+    width: 33.33%;
+    text-align: center;
+}
+
+.display-area {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+#createCharacterCard {
+    background-image: url(../main/img/hachiware.png);
+    background-size: 100% 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.card {
+
+    width: 200px;
+    text-align: center;
+    margin: 10px;
+    height: 180px;
+    opacity: 0.6;
+    border-radius: 25px;
+    border: 0;
+}
+
+.card:hover {
+    opacity: 1;
+}
+
+.character-img img {
+    height: 120px;
+    width: 120px;
+    background-position: center center;
+    background-repeat: no-repeat;
+    object-fit: cover;
+    margin-bottom: 30px;
+}
+
+.hide {
+    display: none;
+}
+
+.book-img {
+    height: 100px;
+    border-radius: 15px;
+    border: 0;
+}
+
+.book-detail {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 80px;
+}
+
+.suitable-age {
+    font-size: 12px;
+}
+
+.selected {
+    height: 20px;
+    width: 130px;
+    position: absolute;
+    bottom: 0px;
+    left: 43px;
+}
+
+.submit {
+    margin-top: 30px;
+}
+
+.modal-body {
+    size: 100px;
+}
+
+.search-container input,
+.search-btn,
+.search-btn:before,
+.search-btn:after {
+    transition: all 0.25s ease-out;
+}
+
+.search-container input,
+.search-btn {
+    width: 3em;
+    height: 3em;
+}
+
+.search-container input:invalid:not(:focus),
+.search-btn {
+    cursor: pointer;
+}
+
+.search-container,
+.search-container input:focus,
+.search-container input:valid {
+    width: 100%;
+}
+
+.search-container input:focus,
+.search-container input:not(:focus)+.search-btn:focus {
+    outline: transparent;
+}
+
+.search-container {
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    max-width: 30em;
+    background-color: rgba(23, 23, 23, 0.3);
+    margin-right: 0px
+}
+
+.search-container input {
+    background: transparent;
+    border-radius: 1.5em;
+    border: 0;
+    box-shadow: 0 0 0 0.4em #171717 inset;
+    padding: 0.75em;
+    transform: translate(0.5em, 0.5em) scale(0.5);
+    transform-origin: 100% 0;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+}
+
+.search-container input::-webkit-search-decoration {
+    -webkit-appearance: none;
+}
+
+.search-container input:focus,
+.search-container input:valid {
+    background: #fff;
+    border-radius: 0.375em 0 0 0.375em;
+    border: 0;
+    box-shadow: 0 0 0 0.1em #d9d9d9 inset;
+    transform: scale(1);
+}
+
+.search-btn {
+    background: #171717;
+    border-radius: 0 0.75em 0.75em 0 / 0 1.5em 1.5em 0;
+    border: 0;
+    padding: 0.75em;
+    position: relative;
+    transform: translate(0.25em, 0.25em) rotate(45deg) scale(0.25, 0.125);
+    transform-origin: 0 50%;
+}
+
+.search-btn:before,
+.search-btn:after {
+    content: "";
+    display: block;
+    opacity: 0;
+    position: absolute;
+}
+
+.search-btn:before {
+    border-radius: 50%;
+    border: 0;
+    box-shadow: 0 0 0 0.2em #f1f1f1 inset;
+    top: 0.75em;
+    left: 0.75em;
+    width: 1.2em;
+    height: 1.2em;
+}
+
+.search-btn:after {
+    background: #f1f1f1;
+    border-radius: 0 0.25em 0.25em 0;
+    border: 0;
+    top: 51%;
+    left: 51%;
+    width: 0.75em;
+    height: 0.25em;
+    transform: translate(0.2em, 0) rotate(45deg);
+    transform-origin: 0 50%;
+}
+
+.search-btn span {
+    display: inline-block;
+    overflow: hidden;
+    width: 1px;
+    height: 1px;
+}
+
+/* Active state */
+.search-container {
+    border-radius: 225px;
+    border: 0;
+}
+
+.search-container input:focus+.search-btn,
+.search-container input:valid+.search-btn {
+    background: #2762f3;
+    border-radius: 0 0.375em 0.375em 0;
+    border: 0;
+    transform: scale(1);
+}
+
+.search-container input:focus+.search-btn:before,
+.search-container input:focus+.search-btn:after,
+.search-container input:valid+.search-btn:before,
+.search-container input:valid+.search-btn:after {
+    opacity: 1;
+}
+
+.search-container input:focus+.search-btn:hover,
+.search-container input:valid+.search-btn:hover,
+.search-container input:valid:not(:focus)+.search-btn:focus {
+    background: #0c48db;
+}
+
+.search-container input:focus+.search-btn:active,
+.search-container input:valid+.search-btn:active {
+    transform: translateY(1px);
+}
+
+@media screen and (prefers-color-scheme: dark) {
+
+    .search-container input {
+        box-shadow: 0 0 0 0.4em #f1f1f1 inset;
+    }
+
+    .search-container input:focus,
+    .search-container input:valid {
+        background: #3d3d3d;
+        box-shadow: 0 0 0 0.1em #3d3d3d inset;
+        border-radius: 225px;
+        border: 0;
+    }
+
+    .search-btn {
+        background: #f1f1f1;
+    }
+}
+
+.glow-on-hover {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 20%;
+    max-height: 100px;
+    /* border: 1px solid #ccc; */
+    margin-top: 10px;
+    position: relative;
+}
+
+#homePageButton {
+    text-decoration: none;
+    color: inherit;
+}
+
+a{
+    text-transform:uppercase;
+    font-size:18px;
+    padding:20px;
+  }
+
+.characters:before,
+.storybooks:before,
+.likes:before,
+.glow-on-hover:before {
+    content: '';
+    background: linear-gradient(45deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8, #ff0000);
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    background-size: 400%;
+    z-index: -1;
+    filter: blur(5px);
+    width: calc(100% + 4px);
+    height: calc(100% + 4px);
+    animation: glowing 20s linear infinite;
+    opacity: 0;
+    transition: opacity .3s ease-in-out;
+    border-radius: 10px;
+}
+
+.characters:active,
+.storybooks:active,
+.likes:active,
+.glow-on-hover:active {
+    color: #000
+}
+
+.characters:active:after,
+.storybooks:active:after,
+.likes:active:after,
+.glow-on-hover:active:after {
+    background: transparent;
+}
+
+.characters:hover:before,
+.storybooks:hover:before,
+.likes:hover:before,
+.glow-on-hover:hover:before {
+    opacity: 1;
+}
+
+@keyframes glowing {
+    0% {
+        background-position: 0 0;
+    }
+
+    50% {
+        background-position: 400% 0;
+    }
+
+    100% {
+        background-position: 0 0;
+    }
+}
+
+.profile-image {
+    width: 150px;
+    height: 150px;
+    border-radius: 100%;
+}

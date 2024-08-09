@@ -1,0 +1,359 @@
+@import url('../helpers/bookReader.css');
+@import url('../helpers/login-register.css');
+
+body{
+    min-width: 1400px;
+    position: relative;
+    top:158px;
+}
+
+.border {
+    border: 1px solid rgb(18, 42, 253);
+    border-radius: 10px;
+}
+
+.bookContainer {
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 80%;
+    height: 1600px;
+    margin: 0 auto;
+    min-width: 1300px;
+    border: 40px solid;
+    border-image-source: url(./img/borderDeepBlue.jpg);
+    border-image-slice: 50 fill;
+    border-image-repeat: round;
+    position: relative;
+    
+}
+
+.navbar {
+    display: flex;
+    justify-content:space-between;
+    margin: 0;
+    margin-bottom: 5px;
+    width: 100%;
+    padding: 20px;
+    align-items: center;
+    border: 40px solid;
+    border-image-source: url(./img/borderBlue.jpg);
+    border-image-slice: 80 fill;
+    border-image-repeat: round;
+    padding-left: 25%;
+}
+
+.search-container {
+    position: relative;
+}
+
+.search-bar {
+    width: 40vw;
+    height: 35px;
+    font-size: 20px;
+    border: 1px solid black;
+    border-radius: 10px;
+    background-color: rgb(180, 238, 255);
+    padding: 0 30px;
+}
+
+.search-result-container {
+    position: absolute;
+    top: 60px;
+    background-color: rgb(197, 231, 255);
+    z-index: 100;
+    width: 40vw;
+    border-radius: 10px;
+    
+}
+.search-result{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 50px;
+    padding: 0 50px 0 30px;
+    font-size: 15px;
+}
+
+.search-result:hover{
+    opacity: 0.8;
+}
+.search-result img{
+    height: 45px;
+    width: 45px;
+    background-position: center center;
+    background-repeat: no-repeat;
+    object-fit: cover;
+}
+
+.upper-part{
+    display:flex;
+    justify-content: space-between;
+    width: 95%;
+    margin-bottom: 30px;
+}
+
+.upper-part img{
+    height: 350px;
+    width: 220px;
+    background-position: center center;
+    background-repeat: no-repeat;
+    object-fit: cover;
+}
+.book-cover{
+    width: 20%;
+    height:350px
+}
+
+.book-detail{
+    width: 50%;
+}
+
+.book-name{
+    font-size: 25px;
+    padding: 10px;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+.textcolor{
+    color: rgb(56, 178, 253)
+}
+
+.author, .description{
+    padding: 10px;
+    font-size: 20px;
+}
+
+.function{
+    width: 20%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.bottom-part{
+    width: 95%;
+    
+}
+
+.comment-area{
+    margin-top: 30px;
+    height: 250px;
+    overflow-y: scroll;
+    scrollbar-width: thin;
+    scrollbar-color: #016864 #fffefe;
+}
+
+h2{
+    color: white;
+    padding: 10px;  
+    background-image: url(./img/bd-bird.png);
+    border-radius: 10px;
+}
+
+.comment-container{
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
+    padding: 0 30px;
+    border-bottom: 2px solid;
+    border-color: rgb(168, 252, 252);
+}
+
+.comment-container:hover{
+    background-color: rgb(217, 245, 247);
+}
+
+#read{
+    margin-top: 15px ;
+}
+
+.belowContainer{
+    display: block;
+    display: flex;
+    bottom: 2%;
+    justify-content: space-between;
+}
+
+.belowContainer-top{
+    width: 100%;
+    height: 20%;
+    text-align: center;
+    align-items: center;
+    display: flex;
+    justify-content: center
+}
+
+.belowContainer-below{
+    width: 100%;
+    height: 80%;
+    text-align: center;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+
+.otherBook{
+    width: 350px;
+    height: 300px;
+}
+
+.otherBookContainer{
+    width: 250px;
+    height: 250px;
+    background-color: bisque;
+}
+
+.publishedBy{
+    width: 350px;
+    height: 300px;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.supportedBy{
+    width: 350px;
+    height: 300px;
+}
+
+.p0{
+    font-size: 50px;
+    font-family: "Papyrus", "fantasy";
+    font-style: italic;
+}
+
+.p1{
+    font-size: 30px;
+    font-family: "Papyrus", "fantasy";
+    font-style: italic;
+}
+
+.p2{
+    font-size: 20px;
+    font-family: "Papyrus", "fantasy";
+    font-style: italic;
+}
+
+.bookContainerBelow{
+    position: absolute;
+    width: 100%;
+    height: 30%;
+    background:  linear-gradient(170deg, rgb(255, 255, 255) 60%, rgb(106, 210, 255));
+    background-blend-mode: multiply;
+    bottom: 1%;
+}
+
+.bookContainerBelow-L{
+    position: absolute;
+    bottom: 1%;
+    left: 1%;
+    width: 70%;
+    height: 100%;
+    text-align: left;
+    align-items: center;
+    
+    
+}
+
+.bookContainerBelow-R{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    bottom: 1%;
+    right: 1%;
+    width: 30%;
+    height: 100%;
+    border: 1px solid  transparent;
+    border-radius: 10px;
+    
+}
+
+.sellArea{
+    width: 100%;
+    height: 400px;
+    background-image: url(./img/sky.png);
+    background-size: cover;
+     background-repeat: no-repeat;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.sellArea-border{
+    border: 1px solid  transparent;
+    border-radius: 10px;
+    background-color: rgba(255, 255, 255, 0.7);
+    height: 70%;
+    width: 95%;
+}
+
+.edit-input{
+    padding: 10px 0px 10px 30px;
+    border-radius: 10px;
+    height:60px;
+    position:relative;
+    right: 30px;
+}
+#new-comment{
+    position: relative;
+    left: 28px;
+    margin-top: 50px;
+    font-family: "Papyrus", "fantasy";
+    font-style: italic;
+    font-size: 25px;
+    padding: 15px;
+    width: 95%;
+}
+
+#create-comment{
+    position: relative;
+    left: 28px;
+    margin-top: 20px;
+}
+
+.hide{
+    display: none;
+}
+
+.like-container{
+    display: flex;
+    margin-top: 30px;
+    justify-content: space-between;
+    width: 50px;
+}
+
+.like-btn{
+    margin-right: 10px;
+}
+
+.btn-group{
+    display: flex;
+    justify-content: space-between;
+    width: 60px;
+}
+
+.comment{
+    display:flex;
+    width: 70%;
+    justify-content: space-between;
+    align-items: end;
+}
+
+#main-page-redirect{
+    position:relative;
+    left: 10%;
+    font-size: 30px;
+}
+
+#read, 
+#make-private, 
+#make-private {
+    margin: 5px;
+}

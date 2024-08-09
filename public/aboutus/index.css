@@ -1,0 +1,93 @@
+body{
+    min-width: 1400px;
+    position: relative;
+    top:275px;
+    
+    background-image: linear-gradient(to top, #cafc98, #ffffff);
+}
+
+
+/* ---------------           navbar              --------------------------*/
+.navbar {
+    display: flex;
+    margin: 0;
+    margin-bottom: 5px;
+    width: 100%;
+    padding: 20px;
+    align-items: center;
+    border: 40px solid;
+    border-image-source: url(../main/img/bordergreen.avif);
+    border-image-slice: 80 fill;
+    border-image-repeat: round;
+
+}
+
+
+/* ---------------           main             ------------------------- */
+
+.main-container{
+    align-self: center;
+    justify-self: center;
+    width: 90%;
+    margin: 0 auto;
+}
+
+.animation{
+    animation: fade-in 2.5s ease-in-out forwards
+}
+
+.b-example-divider{
+    width: 100%;
+    height: 3rem;
+    background-color: rgba(0, 0, 0, .1);
+    border: solid rgba(0, 0, 0, .15);
+    border-width: 1px 0;
+}
+
+
+/* ---------------           footer              ------------------------- */
+
+.belowContainer{
+    display: block;
+    display: flex;
+    bottom: 2%;
+    justify-content: space-between;
+}
+
+.belowContainer-top{
+    width: 100%;
+    height: 20%;
+    text-align: center;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.belowContainer-below{
+    width: 100%;
+    height: 80%;
+    text-align: center;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.p0{
+    font-size: 40px;
+    font-family: "Papyrus", "fantasy";
+    font-style: italic;
+}
+
+.p1{
+    font-size: 30px;
+    font-family: "Papyrus", "fantasy";
+    font-style: italic;
+}
+
+.p2{
+    font-size: 25px;
+    font-family: "Papyrus", "fantasy";
+    font-style: italic;
+}
